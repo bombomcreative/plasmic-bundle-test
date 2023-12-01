@@ -1,4 +1,5 @@
 import { initPlasmicLoader } from "@plasmicapp/loader-nextjs";
+import { Test } from "./components/test";
 
 export const PLASMIC = initPlasmicLoader({
   projects: [
@@ -13,6 +14,15 @@ export const PLASMIC = initPlasmicLoader({
   // project, allowing you to see your designs without publishing.  Please
   // only use this for development, as this is significantly slower.
   preview: false,
+});
+
+
+PLASMIC.registerComponent(Test, {
+  name: 'MyComponent',
+  props: {
+    children: 'slot',
+    color: 'string'
+  }
 });
 
 // You can register any code components that you want to use here; see
